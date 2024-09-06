@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('mahasiswa', function (Blueprint $table) {
@@ -20,10 +17,6 @@ return new class extends Migration
             $table->foreign('DosPem')->references('id')->on('dosen')->onDelete('cascade');  
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('mahasiswa');
